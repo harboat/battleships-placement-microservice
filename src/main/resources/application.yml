@@ -1,0 +1,30 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: placement
+  data:
+    mongodb:
+      uri: ${mongo_uri}
+  rabbitmq:
+    addresses: ${rabbit_uri}
+    username: ${rabbit_username}
+    password: ${rabbit_password}
+  zipkin:
+    base-url: ${zipkin_base_url}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${eureka_service_url}
+
+rabbitmq:
+  exchanges:
+    placement: internal-placement.exchange
+    config: internal-config.exchange
+  queues:
+    placement: placement.queue
+  routing-keys:
+    placement: internal.placement.routing-key
+    config: internal.config.routing-key
