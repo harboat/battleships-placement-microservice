@@ -4,10 +4,12 @@ import com.github.harboat.clients.game.Masts;
 import com.github.harboat.clients.game.ShipDto;
 import com.github.harboat.clients.game.ShipType;
 import com.github.harboat.clients.game.Size;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 import java.security.SecureRandom;
 import java.util.*;
 
+@SuppressFBWarnings(value = "DMI_RANDOM_USED_ONLY_ONCE")
 public class RandomShipsPlacementGenerator {
 
     private final Size size;
